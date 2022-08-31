@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
-def pca_bcmf(X):
+def principalcompanalysis(X):
     # remove rows with NaNs
     X=X.dropna()
     
