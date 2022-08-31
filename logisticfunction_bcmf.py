@@ -18,9 +18,9 @@ import matplotlib.pyplot as plt
 #   y=np.array([10, 8, 20, 18, 50, 75, 85, 82, 88, 86])
 def logisticfunction_bcmf(X,y,ydiff):
     ######################################################################################################
-    # L scaling the output range from [0,1] to [0,L]
-    # b adds bias to the output and changes its range from [0,L] to [b,L+b]
-    # k is responsible for scaling the input, which remains in (-inf,inf)
+    # L scales output from [0,1] to [0,L]
+    # b adds bias to output and changes range from [0,L] to [b,L+b]
+    # k scales input, which remains in (-inf,inf)
     # x0 inflection point
     def logistic(x, L ,x0, k, b):
         y = L / (1 + np.exp(-k*(x-x0))) + b
