@@ -14,7 +14,7 @@ import numpy as np
 from sklearn.metrics import r2_score
 from sklearn.linear_model import Lasso
 
-def lassoregression_bcmf(X,y,test_pc,alpha):
+def lassoregression(X,y,test_pc,alpha):
     
     # Set % of data for test set
     ntest=np.round_(X.size*(test_pc/100))
