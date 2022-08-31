@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 # example:
 #   X=np.array([0.5, 1, 2, 4, 6, 12, 18, 36, 48, 60])
 #   y=np.array([10, 8, 20, 18, 50, 75, 85, 82, 88, 86])
-def logisticfunction_bcmf(X,y,ydiff):
+def logisticfunction(X,y,ydiff):
     ######################################################################################################
     # L = upper asymptote, scales from [0,1] to [0,L]
     # b = bias to the output, changes range from [0,L] to [b,L+b]
