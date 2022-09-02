@@ -31,7 +31,7 @@ def lassoregression(X,y,test_pc,alpha):
     
     ######################################################################################################
     # Create model
-    lasso = Lasso(alpha=alpha)
+    lasso = Lasso(alpha=alpha) # alpha equivalent to lamba; penalty coefficient
     
     y_pred_lasso = lasso.fit(X_train, y_train).predict(X_test)
     r2_score_lasso = r2_score(y_test, y_pred_lasso)
