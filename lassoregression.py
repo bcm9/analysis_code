@@ -2,7 +2,7 @@
 """
 Created on Wed Aug 31 10:24:25 2022
 
-Lasso regression with numpy, sklearn, and matplotlib
+Lasso regression (L1 Regularization) with numpy, sklearn, and matplotlib
 
 @author: BCM
 """
