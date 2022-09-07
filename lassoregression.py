@@ -39,7 +39,7 @@ def lassoregression(X,y,test_pc,alpha):
     
     # Coefficients
     print(lasso)
-    # r2 coefficient of determination
+    # r2 Coefficient of determination
     print("r-squared = %.2f" % r2_score_lasso)
     
     ######################################################################################################
