@@ -35,8 +35,7 @@ def logisticfunction(X,y,ydiff):
     
     # Fit function
     paramsopt, params_cov = curve_fit(logistic, X, y, params0)
-    
-    
+        
     # Create array of x values to fit function to
     X2=np.arange(np.amin(X), np.amax(X),0.1)
     y2 = logistic(X2, *paramsopt)
