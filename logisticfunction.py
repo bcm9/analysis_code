@@ -56,7 +56,7 @@ def logisticfunction(X,y,ydiff):
     plt.plot(X, y, 'o', label='data',color="black")
     plt.plot(X2,y2, label='fit',color="red", linewidth=2)
     plt.legend(loc='lower right')
-    plt.title("Logistic Function")
+    plt.title("Logistic Function: r^2 = "+str(round(r_squared,3)))
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.axvline(threshold,color='blue',ls=':')
