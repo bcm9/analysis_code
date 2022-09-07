@@ -4,6 +4,12 @@ Created on Wed Aug 31 11:48:26 2022
 
 Fit logistic function to data, estimate threshold
 
+example:
+  X=np.array([0.5, 1, 2, 4, 6, 12, 18, 36, 48, 60])
+  y=np.array([10, 8, 20, 18, 50, 75, 85, 82, 88, 86])
+  ydiff=10
+  paramsopt, params_cov,residuals, r_squared, threshold = logisticfunction(X,y,ydiff)
+
 @author: BC478
 """
 ######################################################################################################
@@ -12,11 +18,6 @@ from scipy.optimize import curve_fit
 import numpy as np
 import matplotlib.pyplot as plt
 
-# example:
-#   X=np.array([0.5, 1, 2, 4, 6, 12, 18, 36, 48, 60])
-#   y=np.array([10, 8, 20, 18, 50, 75, 85, 82, 88, 86])
-#   ydiff=10
-#   paramsopt, params_cov,residuals, r_squared, threshold = logisticfunction(X,y,ydiff)
 def logisticfunction(X,y,ydiff):
     ######################################################################################################
     # L = upper asymptote, scales from [0,1] to [0,L]
