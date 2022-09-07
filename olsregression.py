@@ -14,7 +14,7 @@ import numpy as np
 from sklearn import linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
-def linearregression(X,y,test_pc):
+def olsregression(X,y,test_pc):
 
     # Set % of data for test set
     ntest=np.round_(X.size*(test_pc/100))
