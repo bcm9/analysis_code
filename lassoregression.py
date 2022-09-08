@@ -43,11 +43,12 @@ def lassoregression(X,y,test_pc,alpha):
     print("r-squared = %.2f" % r2_score_lasso)
     
     ######################################################################################################
-    # Plot output
-    plt.scatter(X_test, y_test,facecolors='none', edgecolors='black')
-    plt.plot(X_test, y_pred_lasso, color="red", linewidth=2)
-    plt.text(np.amax(X_test)-(np.amax(X_test)*0.3), np.amin(y_test)+(np.amin(y_test)*0.2),'r = ' + str(np.round_(r2_score(y_test, y_pred_lasso),2)),color='red')
-    plt.title("Lasso Regression")
-    plt.xlabel("X")
-    plt.ylabel("Y")
-    plt.show()
+    # Plot output if one predictor variable
+    if X_test.shape[1]==1:
+        plt.scatter(X_test, y_test,facecolors='none', edgecolors='black')
+        plt.plot(X_test, y_pred_lasso, color="red", linewidth=2)
+        plt.text(np.amax(X_test)-(np.amax(X_test)*0.3), np.amin(y_test)+(np.amin(y_test)*0.2),'r = ' + str(np.round_(r2_score(y_test, y_pred_lasso),2)),color='red')
+        plt.title("Lasso Regression")
+        plt.xlabel("X")
+        plt.ylabel("Y")
+        plt.show()
