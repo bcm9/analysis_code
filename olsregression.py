@@ -17,7 +17,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 def olsregression(X,y,test_pc):
 
     # Set % of data for test set
-    ntest=np.round_(X.size*(test_pc/100))
+    ntest=np.round_(X.shape[0]*(test_pc/100))
     # convert float to int
     ntest=int(ntest)
 
