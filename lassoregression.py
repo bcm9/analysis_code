@@ -38,9 +38,13 @@ def lassoregression(X,y,test_pc,alpha):
     r2_score_lasso = r2_score(y_test, y_pred_lasso)
     
     # Coefficients
-    print(lasso)
+    print("coeffs: ", lasso.coef_)    
+    # Intercept
+    print("intercept: ", lasso.intercept_)    
     # r2 Coefficient of determination
     print("r-squared = %.2f" % r2_score_lasso)
+    
+    return lasso
     
     ######################################################################################################
     # Plot output if one predictor variable
