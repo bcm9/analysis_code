@@ -45,11 +45,15 @@ def olsregression(X,y,test_pc):
 
     # Coefficients
     print("coefficients = \n", mdl.coef_)
+    # Intercept
+    print("intercept: ", mdl.intercept_)  
     # Mean squared error
     print("mean squared error = %.2f" % mean_squared_error(y_test, y_pred))
     # r2 coefficient of determination
     print("r-squared = %.2f" % r2_score(y_test, y_pred))
-
+    
+    return mdl
+    
     ######################################################################################################
     # Plot output if one predictor variable
     if X_test.shape[1]==1:
