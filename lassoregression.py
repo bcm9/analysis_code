@@ -19,8 +19,12 @@ def lassoregression(X,y,test_pc):
 
     # Set % of data for test set
     ntest=np.round_(X.shape[0]*(test_pc/100))
-    # convert float to int
+    # Convert float to int
     ntest=int(ntest)
+    
+    # Standardise (z-score) data 
+    X=(X-np.mean(X))/np.std(X)
+    y=(y-np.mean(y))/np.std(y)
     
     # Split predictor data into training/testing sets
     X_train = X[:-ntest]
