@@ -44,7 +44,7 @@ def lassoregression(X,y,test_pc):
     lasso.fit(X_train, y_train)
     
     # Optimal alpha
-    print("optimal alpha: ",lasso.alpha_)  
+    print("optimal alpha = ",lasso.alpha_)  
 
     ######################################################################################################    
     # Now fit optimised model
@@ -55,9 +55,9 @@ def lassoregression(X,y,test_pc):
     r2_score_lasso = r2_score(y_test, y_lasso_opt)
     
     # Coefficients
-    print("coeffs: ", lasso.coef_)    
+    print("coeffs = ", lasso.coef_)    
     # Intercept
-    print("intercept: ", lasso.intercept_)    
+    print("intercept = ", lasso.intercept_)    
     # r2 Coefficient of determination
     print("r-squared = %.2f" % r2_score_lasso)
     
