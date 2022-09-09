@@ -13,11 +13,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 
-# If X is not dataframe, convert
-if not isinstance(X, pd.DataFrame):
-    X=pd.DataFrame(X)
-
 def principalcompanalysis(X):
+    # If X is not dataframe, convert
+    if not isinstance(X, pd.DataFrame):
+        X=pd.DataFrame(X)
+        
     # remove rows with NaNs
     X=X.dropna()
     
