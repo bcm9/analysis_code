@@ -2,7 +2,7 @@
 """
 Created on Wed Aug 31 10:24:25 2022
 
-Lasso regression (L1 Regularization) with cross validation to optimise alpha. 
+Lasso regression (L1 Regularization) function with cross validation to optimise alpha. 
 
 @author: BCM
 """
