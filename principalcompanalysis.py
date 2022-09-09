@@ -2,7 +2,7 @@
 """
 Created on Wed Aug 31 13:28:06 2022
 
-Principal component analysis
+Principal component analysis with biplot
 
 @author: BCM
 """
@@ -10,7 +10,6 @@ Principal component analysis
 # Import packages, pre-processing    
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
 def principalcompanalysis(X):
