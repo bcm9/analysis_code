@@ -53,8 +53,8 @@ def principalcompanalysis(X):
     plt.xlabel("Principal Component")
     plt.ylabel("Eigenvalues")
     plt.xticks(np.arange(len(latent)), np.arange(1, len(latent)+1))
-    
-    
+    plt.yticks(np.arange(0, np.max(latent)+.5, step=0.5))
+
     def biplot(score,coeff_loadings,labels=None):
         xs = score[:,0]
         ys = score[:,1]
