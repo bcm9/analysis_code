@@ -46,7 +46,7 @@ def olsregression(X,y,test_pc):
     # Coefficients
     print("coefficients = \n", mdl.coef_)
     # Intercept
-    print("intercept: ", mdl.intercept_)  
+    print("intercept = ", mdl.intercept_)  
     # Mean squared error
     print("mean squared error = %.2f" % mean_squared_error(y_test, y_pred))
     # r2 coefficient of determination
