@@ -17,8 +17,8 @@ def principalcompanalysis(X):
     # remove rows with NaNs
     X=X.dropna()
     
-    # Standardize data so mean = 0, stdev = 1
-    stdX = StandardScaler().fit_transform(X)
+    # Standardize data so mean = 0, stdev = 1 (z-score)
+    stdX=(X-np.mean(X))/np.std(X)
     
     ######################################################################################################
     # Conduct PCA
