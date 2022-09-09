@@ -9,8 +9,13 @@ Principal component analysis with biplot
 ######################################################################################################
 # Import packages, pre-processing    
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
+
+# If X is not dataframe, convert
+if not isinstance(X, pd.DataFrame):
+    X=pd.DataFrame(X)
 
 def principalcompanalysis(X):
     # remove rows with NaNs
