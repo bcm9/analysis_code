@@ -77,4 +77,4 @@ def principalcompanalysis(X):
     plt.subplot(2, 1, 2)
     biplot(score[:,0:2],np.transpose(pca.components_[0:2, :]))
     plt.show()
-    return coeff_loadings, score, latent
+    return coeff_loadings, score, latent, explained
