@@ -2,8 +2,15 @@
 """
 Created on Wed Aug 31 13:28:06 2022
 
-Principal component analysis with biplot
+coeff_loadings, score, latent, explained = principalcompanalysis(X)
+conducts principal component analysis with biplot
 
+X = matrix of data
+coeff_loadings = each column of coeff contains coefficients for one principal component. columns are in order of descending component variance, latent. PC coefficients are recipe for counting any given PC
+score = how each individual observation is composed of the PCs. matrix of PCs x observations.
+latent = eigenvalues of the covariance matrix, returned as a column vector
+    eigenvalue is the total amount of variance in the variables in the dataset explained by the common factor.
+ 
 @author: BCM
 """
 ######################################################################################################
@@ -26,13 +33,6 @@ def principalcompanalysis(X):
     
     ######################################################################################################
     # Conduct PCA
-    #   Outputs:
-    #   coeff_loadings = Principal component coefficients are recipe for counting any given PC
-    #       each column of coeff contains coefficients for one principal component.
-    #       columns are in order of descending component variance, latent.
-    #   score = how each individual observation is composed of the PCs. matrix of PCs x observations.
-    #   latent = eigenvalues of the covariance matrix, returned as a column vector
-    #       an eigenvalue is the total amount of variance in the variables in the dataset explained by the common factor.
     #   explained = the contribution of each PC to variability in data
     Xsize=np.shape(stdX)
     pca = PCA(n_components=Xsize[1])
