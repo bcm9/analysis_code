@@ -11,6 +11,7 @@ Ordinary least squares regression with numpy, sklearn, and matplotlib
 # Import packages, pre-processing
 import matplotlib.pyplot as plt
 import numpy as np
+import random
 from sklearn import linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
