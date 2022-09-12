@@ -2,7 +2,13 @@
 """
 Created on Wed Aug 31 10:24:25 2022
 
+lasso_opt=lassoregression(X,y,test_pc)
 Lasso regression (L1 Regularization) with cross validation to optimise alpha. 
+
+X = matrix of predictor data
+y = array of target data
+test_pc = % of data for test set
+lasso_opt = model output
 
 @author: BCM
 """
