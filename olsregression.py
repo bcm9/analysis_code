@@ -3,7 +3,7 @@
 Created on Wed Aug 31 10:24:25 2022
 
 mdl=olsregression(X,y,test_pc)
-Ordinary least squares regression with numpy, sklearn, and matplotlib
+Ordinary least squares regression with plot.
 
 X = matrix of predictor data
 y = array of target data
