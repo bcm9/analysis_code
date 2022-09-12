@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 naivebayes(X,y,test_pc)
-Naive (simple, independent) Bayes function uses Bayes' theorem to predict class probabilities
-Most likely class is the class with the highest probability (Maximum A Posteriori - MAP)
-Naive Bayes assumes feature independence, hence Naive
+Returns Naive Bayes output for classification with scatter plot and confusion matrix.
 
 X = matrix of predictor data
 y = array of class data
@@ -24,7 +22,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 
 def naivebayes(X,y,test_pc):
-    
+    # Naive (simple, independent) Bayes function uses Bayes' theorem to predict class probabilities
+    # Most likely class is the class with the highest probability (Maximum A Posteriori - MAP)
+    # Naive Bayes assumes feature independence, hence Naive
     ######################################################################################################
     # Split data into training/test sets
     # Set % of data for test set
