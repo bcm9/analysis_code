@@ -50,16 +50,16 @@ def logisticfunction(X,y,ydiff):
     ss_res = np.sum(residuals**2)
     ss_tot = np.sum((y-np.mean(y))**2)
     r_squared = 1 - (ss_res / ss_tot)
-
+    
     ######################################################################################################
     # Plot output
-    plt.plot(X, y, 'o', label='data',color="black")
-    plt.plot(X2,y2, label='fit',color="red", linewidth=2)
+    plt.plot(X, y, 'ko',ms=12,label='data',color="black",fillstyle="none")
+    plt.plot(X2,y2, label='fit',color="pink", linewidth=4)
     plt.legend(loc='lower right')
     plt.title("Logistic Function: r^2 = "+str(round(r_squared,3)))
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
-    plt.axvline(threshold,color='blue',ls=':')
+    plt.axvline(threshold,color='red',ls=':')
     plt.show()
     return(paramsopt, params_cov,residuals, r_squared, threshold)
