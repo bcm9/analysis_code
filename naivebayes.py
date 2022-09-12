@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-
+naivebayes(X,y,test_pc)
 Naive (simple, independent) Bayes function uses Bayes' theorem to predict class probabilities
 Most likely class is the class with the highest probability (Maximum A Posteriori - MAP)
 Naive Bayes assumes feature independence, hence Naive
+
+X = matrix of predictor data
+y = array of class data
+test_pc = % of data for test set
 
 @author: BCM
 """
