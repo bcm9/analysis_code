@@ -70,5 +70,11 @@ def lassoregression(X,y,test_pc):
         plt.xlabel("X")
         plt.ylabel("Y")
         plt.show()
+    else:
+        # Plot predictor coefficient
+        plt.bar([x for x in range(len(lasso_opt.coef_))], lasso_opt.coef_)
+        plt.xlabel("Predictor")
+        plt.ylabel("Coefficients")
+        plt.show()
         
     return lasso_opt
