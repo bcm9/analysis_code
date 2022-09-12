@@ -52,6 +52,7 @@ def principalcompanalysis(X):
     plt.title("Scree Plot")
     plt.xlabel("Principal Component")
     plt.ylabel("Eigenvalues")
+    plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
     plt.xticks(np.arange(len(latent)), np.arange(1, len(latent)+1))
     plt.yticks(np.arange(0, np.max(latent)+.5, step=0.5))
 
@@ -72,7 +73,7 @@ def principalcompanalysis(X):
         plt.ylim(-1,1)
         plt.xlabel("PC{}".format(1))
         plt.ylabel("PC{}".format(2))
-        plt.grid()
+        plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
     # plot the first 2 PCs
     plt.subplot(2, 1, 2)
     biplot(score[:,0:2],np.transpose(pca.components_[0:2, :]))
