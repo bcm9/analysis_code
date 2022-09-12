@@ -51,16 +51,15 @@ def olsregression(X,y,test_pc):
     print("mean squared error = %.2f" % mean_squared_error(y_test, y_pred))
     # r2 coefficient of determination
     print("r-squared = %.2f" % r2_score(y_test, y_pred))
-    
-    return mdl
-    
+        
     ######################################################################################################
     # Plot output if one predictor variable
     if X_test.shape[1]==1:
         plt.scatter(X_test, y_test,facecolors='none', edgecolors='black')
         plt.plot(X_test, y_pred, color="red", linewidth=2)
-        plt.text(np.amax(X_test)-(np.amax(X_test)*0.3), np.amin(y_test)+(np.amin(y_test)*0.2),'r = ' + str(np.round_(r2_score(y_test, y_pred),2)),color='red')
-        plt.title("Ordinary Least Squares Regression")
+        plt.title("OLS Regression; r = " + str(np.round_(r2_score(y_test, y_pred),2)))
         plt.xlabel("X")
         plt.ylabel("Y")
         plt.show()
+        
+    return mdl
