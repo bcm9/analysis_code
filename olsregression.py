@@ -21,13 +21,18 @@ def olsregression(X,y,test_pc):
     # convert float to int
     ntest=int(ntest)
 
+    # Randomly select indices to split rows into training/testing sets 
+    trainidx=np.arange(0,X.shape[0])
+    testidx=np.array(random.sample(range(X.shape[0]), ntest))
+    trainidx = np.delete(trainidx, testidx)
+    
     # Split predictor data into training/testing sets
-    X_train = X[:-ntest]
-    X_test = X[-ntest:]
-
+    X_train = X[trainidx,:]
+    X_test = X[testidx,:]
+    
     # Split target data into training/testing sets
-    y_train = y[:-ntest]
-    y_test = y[-ntest:]
+    y_train = y[trainidx]
+    y_test = y[testidx]
 
     # Check size of data
     print("training set size = \n", X_train.size)
