@@ -66,6 +66,7 @@ def olsregression(X,y,test_pc):
         plt.title("OLS Regression; r = " + str(np.round_(r2_score(y_test, y_pred),2)))
         plt.xlabel("X")
         plt.ylabel("Y")
+        plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
         plt.show()
     else:
         # Plot predictor coefficient
