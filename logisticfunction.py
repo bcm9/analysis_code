@@ -2,13 +2,23 @@
 """
 Created on Wed Aug 31 11:48:26 2022
 
+paramsopt, params_cov,residuals, r_squared, threshold = logisticfunction(X,y,ydiff)
 Fit logistic function to data, estimate threshold
+
+X = array of data
+y = array of data
+ydiff = return point within ydiff of asymptote
+
+paramsopt = optimised parameters
+params_cov = estimated covariance of paramsopt
+residuals = observed - predicted
+r_squared = coefficient of determination
+threshold = x value ydiff of asymptote
 
 example:
   X=np.array([0.5, 1, 2, 4, 6, 12, 18, 36, 48, 60])
   y=np.array([10, 8, 20, 18, 50, 75, 85, 82, 88, 86])
   ydiff=10
-  paramsopt, params_cov,residuals, r_squared, threshold = logisticfunction(X,y,ydiff)
 
 @author: BC478
 """
