@@ -67,5 +67,11 @@ def olsregression(X,y,test_pc):
         plt.xlabel("X")
         plt.ylabel("Y")
         plt.show()
+    else:
+        # Plot predictor coefficient
+        plt.bar([x for x in range(len(mdl.coef_))], mdl.coef_)
+        plt.xlabel("Predictor")
+        plt.ylabel("Coefficients")
+        plt.show()
         
     return mdl
