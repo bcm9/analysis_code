@@ -59,6 +59,7 @@ def logisticfunction(X,y,ydiff):
     plt.title("Logistic Function: r^2 = "+str(round(r_squared,3)))
     plt.xlabel("X")
     plt.ylabel("Y")
+    plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
     plt.axvline(threshold,color='blue',ls=':')
     plt.show()
     return(paramsopt, params_cov,residuals, r_squared, threshold)
