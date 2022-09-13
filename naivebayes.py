@@ -73,12 +73,12 @@ def naivebayes(X,y,test_pc):
     ######################################################################################################
     # Metrics, evaluation
     # Print accuracy
-    print('Model accuracy = {0:0.3f}'. format(accuracy_score(y_test, y_pred)))
+    # print('Model accuracy = {0:0.3f}'. format(accuracy_score(y_test, y_pred)))
     
     # Check if overfit
     print('Training set score = {:.3f}'.format(mdl.score(X_train, y_train)))
     print('Test set score = {:.3f}'.format(mdl.score(X_test, y_test)))
-    
+    print(sum(y_test==y_pred),'out of ',len(y_test),'classifications correct')
     ######################################################################################################
     # Visualization
     # Plot scatter
