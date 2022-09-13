@@ -53,6 +53,7 @@ def principalcompanalysis(X):
     plt.title("Scree Plot")
     plt.xlabel("Principal Component")
     plt.ylabel("Eigenvalues")
+    plt.axhline(y=1,linewidth= 1, color='r', linestyle= 'dotted')
     plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
     plt.xticks(np.arange(len(latent)), np.arange(1, len(latent)+1))
     plt.yticks(np.arange(0, np.max(latent)+.5, step=0.5))
