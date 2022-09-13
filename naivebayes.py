@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-naivebayes(X,y,test_pc)
+mdl=naivebayes(X,y,test_pc)
 Returns Naive Bayes output for classification with scatter plot and confusion matrix.
 
 X = matrix of predictor data
 y = array of class data
 test_pc = % of data for test set
+mdl = model output
 
 @author: BCM
 """
@@ -100,3 +101,5 @@ def naivebayes(X,y,test_pc):
         cm_matrix = pd.DataFrame(data=cfmat, columns=['True positive:1', 'True negative:0'], 
                                          index=['Predicted positive:1', 'Predicted negative:0']) 
         sns.heatmap(cm_matrix, annot=True, fmt='d', cmap='GnBu')
+        
+    return mdl
