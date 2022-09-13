@@ -49,7 +49,7 @@ def principalcompanalysis(X):
     # Plot output
     # Scree plot
     plt.subplot(2, 1, 1)
-    plt.plot(np.arange(0, latent.shape[0]),latent, 'k-o')
+    plt.plot(np.arange(0, latent.shape[0]),latent,'k-o',ms=11,mfc='white')
     plt.title("Scree Plot")
     plt.xlabel("Principal Component")
     plt.ylabel("Eigenvalues")
