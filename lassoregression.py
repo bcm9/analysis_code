@@ -78,7 +78,7 @@ def lassoregression(X,y,test_pc):
         plt.title("Lasso Regression; r = " + str(np.round_(r2_score(y_test, y_lasso_opt),2)))
         plt.xlabel("X")
         plt.ylabel("Y")
-        plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
+        plt.grid(color = 'black', linestyle = '--', linewidth = 0.3)
         plt.show()
     else:
         # Plot predictor coefficient
