@@ -33,6 +33,9 @@ def lassoregression(X,y,test_pc):
     ntest=int(ntest)
     
     # Split predictor data into training/testing sets
+    if np.ndim(X)==1:
+        X=np.reshape(X,(-1, 1))
+
     X_train = X[:-ntest]
     X_test = X[-ntest:]
 
