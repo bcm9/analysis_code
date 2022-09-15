@@ -34,6 +34,9 @@ def olsregression(X,y,test_pc):
     trainidx = np.delete(trainidx, testidx)
     
     # Split predictor data into training/testing sets
+    if np.ndim(X)==1:
+        X=np.reshape(X,(-1, 1))
+        
     X_train = X[trainidx,:]
     X_test = X[testidx,:]
     
