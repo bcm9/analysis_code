@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Aug 31 13:28:06 2022
-
 coeff_loadings, score, latent, explained = principalcompanalysis(X)
 conducts principal component analysis with biplot
-
 X = matrix of data
 coeff_loadings = each column of coeff contains coefficients for one principal component. columns are in order of descending component variance, latent. PC coefficients are recipe for counting any given PC
 score = how each individual observation is composed of the PCs. matrix of PCs x observations
 latent = eigenvalues of the covariance matrix, returned as a column vector
     eigenvalue is the total amount of variance in the variables in the dataset explained by the common factor
 explained = contribution of each PC to variability in data
-
 @author: BCM
 """
 ######################################################################################################
@@ -48,15 +45,25 @@ def principalcompanalysis(X):
     ######################################################################################################
     # Plot output
     # Scree plot
-    plt.subplot(2, 1, 1)
     plt.plot(np.arange(0, latent.shape[0]),latent,'k-o',ms=11,mfc='white')
     plt.title("Scree Plot")
     plt.xlabel("Principal Component")
     plt.ylabel("Eigenvalues")
     plt.axhline(y=1,linewidth= 1, color='r', linestyle= 'dotted')
-    plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
+    plt.grid(color = 'black', linestyle = '--', linewidth = 0.3)
     plt.xticks(np.arange(len(latent)), np.arange(1, len(latent)+1))
-    plt.yticks(np.arange(0, np.max(latent)+.5, step=0.5))
+    plt.yticks(np.arange(np.min(latent)-.5, np.max(latent)+.5, step=0.5))
+    plt.show()
+
+    # Cumulative PVE vs. Principal Component plot
+    plt.plot(np.arange(0, latent.shape[0]),np.cumsum(explained),'k-o',ms=11,mfc='white')
+    plt.title("Cumulative PVE vs. Principal Component")
+    plt.xlabel("Principal Component")
+    plt.ylabel("Cumulative Proportion of Variance Explained")
+    plt.grid(color = 'black', linestyle = '--', linewidth = 0.3)
+    plt.xticks(np.arange(len(latent)), np.arange(1, len(latent)+1))
+    plt.yticks(np.arange(0, 1, step=0.25))
+    plt.show()
 
     def biplot(score,coeff_loadings,labels=None):
         xs = score[:,0]
@@ -73,11 +80,10 @@ def principalcompanalysis(X):
                 plt.text(coeff_loadings[i,0]* 1.15, coeff_loadings[i,1] * 1.15, labels[i], color = 'g', ha = 'center', va = 'center')
         plt.xlim(-1,1)
         plt.ylim(-1,1)
-        plt.xlabel("PC{}".format(1))
-        plt.ylabel("PC{}".format(2))
+        plt.xlabel("Principal Component {}".format(1))
+        plt.ylabel("Principal Component {}".format(2))
         plt.grid(color = 'black', linestyle = '--', linewidth = 0.1)
     # plot the first 2 PCs
-    plt.subplot(2, 1, 2)
     biplot(score[:,0:2],np.transpose(pca.components_[0:2, :]))
     plt.show()
     return coeff_loadings, score, latent, explained
