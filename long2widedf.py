@@ -1,5 +1,5 @@
 # long2widedf converts a long format dataframe to a wide format
-# argument is df and id_string. user enters ID column string of which to group by into command line. e.g. long2widedf(df,'patient_id')
+# argument is df and id_string (column string of key to group by). e.g. long2widedf(df,'patient_id')
 import pandas as pd
 
 def long2widedf(df,id_string):
