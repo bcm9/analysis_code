@@ -1,6 +1,6 @@
 # stats_functions
 ### Selection of statistical functions including:
 
-* Regression (OLS, LASSO, logisistic, PCA)
+* Regression (OLS, LASSO, logistic, PCA)
 * Classificaiton (Naive Bayes)
 * Fleiss' k
