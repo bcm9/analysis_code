@@ -1,4 +1,4 @@
-# py_stats_bcm
+# stats_functions
 ### Selection of statistical functions including:
 
 * Regression (OLS, LASSO, logisistic, PCA)
