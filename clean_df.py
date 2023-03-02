@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Mar  2 20:35:15 2023
+Created on Thu Mar 2 20:35:15 2023
 
 Generic script for cleaning data
 
@@ -29,18 +29,18 @@ data_types = unclean_df.dtypes
 # Count missing values in each column
 missing_values = unclean_df.isnull().sum()
 missing_values = missing_values.sort_values(ascending=False)
-# Export to CSV
+
+# Export to .csv
 name = "missing_values_{}.csv".format(timestamp)
 missing_values.to_csv(progress_folder+name,index=True)
 
-# # Bar plot of missing values
+# Bar plot missing values
 missing_values_filtered = missing_values[missing_values > 0]
 sns.barplot(x=missing_values_filtered.index, y=missing_values_filtered.values)
-# Add x-axis and y-axis labels
+# Plot formatting
 plt.xlabel('Columns')
 plt.ylabel('Missing Values (#)')
-# Add title to the plot
-plt.title('Missing Values in Zio Dataset')
+plt.title('Missing Values in Dataset')
 plt.xticks(rotation=90, fontsize=7)
 # Show plot
 plt.show()
