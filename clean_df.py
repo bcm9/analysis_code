@@ -25,7 +25,6 @@ unclean_df = pd.read_csv(progress_folder+filename)
 # 1. CHECK MISSING DATA
 #######################################################################
 timestamp = datetime.datetime.now().strftime("%Y%m%d")
-data_types = unclean_df.dtypes
 # Count missing values in each column
 missing_values = unclean_df.isnull().sum()
 missing_values = missing_values.sort_values(ascending=False)
