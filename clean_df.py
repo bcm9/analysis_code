@@ -45,30 +45,29 @@ plt.xticks(rotation=90, fontsize=7)
 plt.show()
 
 # Fill in missing values
-clean_df=unclean_df
-clean_df.fillna("NaN", inplace=True)
+unclean_df.fillna("NaN", inplace=True)
 
 #######################################################################
 # 2. CHECK FOR DUPLICATES
 #######################################################################
 # Check for duplicates
-duplicates = clean_df.T.duplicated()
+duplicates = unclean_df.T.duplicated()
 
 # Count n duplicates, print
 n_duplicates = duplicates.sum()
 print("N duplicates= ", n_duplicates)
 
 # Get names of duplicate columns
-duplicated_cols = clean_df.columns[duplicates].tolist()
+duplicated_cols = unclean_df.columns[duplicates].tolist()
 
 # Drop duplicate columns
-clean_df.drop(duplicated_cols, axis=1, inplace=True)
+unclean_df.drop(duplicated_cols, axis=1, inplace=True)
 
 #######################################################################
 # 3. SUMMARISE DATA, CHECK TYPES
 #######################################################################
-df_summary=(clean_df.describe())
-df_types=(clean_df.dtypes)
+df_summary=(unclean_df.describe())
+df_types=(unclean_df.dtypes)
 
 #######################################################################
 # 4. CHECK FOR MISCODING ERRORS
@@ -77,16 +76,17 @@ df_types=(clean_df.dtypes)
 pattern = r'[^\x00-\x7F]+'  # Find non-ASCII characters
 
 # Loop over columns in df, count errors
-for col in clean_df.columns:
+for col in unclean_df.columns:
     # Convert col name to string
-    clean_df[col] = clean_df[col].astype(str)
-    errors = clean_df[col].str.contains(pattern)
+    unclean_df[col] = unclean_df[col].astype(str)
+    errors = unclean_df[col].str.contains(pattern)
     num_errors = errors.sum()
     print("N miscoding errors in {}: {}".format(col, num_errors))
 
 #######################################################################
 # 5. EXPORT CLEAN DATA
 #######################################################################
+clean_df=unclean_df
 timestamp = datetime.datetime.now().strftime("%Y%m%d")
 clean_filename = "clean_data_{}.csv".format(timestamp)
 clean_folder='C:/Users/bcm9/test/clean/'
