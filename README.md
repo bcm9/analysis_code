@@ -4,3 +4,4 @@
 * Regression (OLS, LASSO, logistic, PCA)
 * Classificaiton (Naive Bayes)
 * Fleiss' k
+* Pre-processing (cleaning, long format to wide)
