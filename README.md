@@ -1,5 +1,5 @@
-# stats_functions
-### Selection of statistical functions for MATLAB/Python including:
+# analysis_code
+### Generic MATLAB/Python code for data analysis and statistics including:
 
 * Regression (OLS, LASSO, logistic, PCA)
 * Classificaiton (Naive Bayes)
