@@ -2,6 +2,8 @@
 """
 Data completedness script
 
+Check completeness of data, summary statistics, export to excel file
+
 """
 
 # Load data
