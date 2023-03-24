@@ -7,6 +7,7 @@ Data completedness script
 # Load data
 import pandas as pd
 import matplotlib.pyplot as plt
+import datetime
 
 # Select file and folder
 filename='C:/Users/bc/test/test_data.csv'
@@ -36,5 +37,19 @@ plt.figure(figsize=(10,5))
 plt.bar(completeness.index, completeness.values)
 plt.xticks(rotation=90)
 plt.ylabel('Completeness (%)')
-plt.title('Completeness of Zio Data')
+plt.title('Completeness of Data')
 plt.show()
+
+# Write completedness and summary dfs to excel file
+# Create a pandas Excel writer
+timestamp = datetime.datetime.now().strftime("%Y%m%d")
+name = "completeness_{}.xlsx".format(timestamp)
+writer = pd.ExcelWriter(name, engine='xlsxwriter')
+
+# Write the dfs to excel file
+completeness.to_excel(writer, sheet_name='completeness', index=True)
+summary.to_excel(writer, sheet_name='summary', index=True)
+
+# Save the Excel file
+writer.save()
+writer.close()
