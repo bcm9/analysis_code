@@ -47,8 +47,8 @@ name = "completeness_{}.xlsx".format(timestamp)
 writer = pd.ExcelWriter(name, engine='xlsxwriter')
 
 # Write the dfs to excel file
-completeness.to_excel(writer, sheet_name='completeness', index=True)
-summary.to_excel(writer, sheet_name='summary', index=True)
+completeness.to_excel(writer, sheet_name='Completeness', index=True)
+summary.to_excel(writer, sheet_name='Summary', index=True)
 
 # Save the Excel file
 writer.save()
