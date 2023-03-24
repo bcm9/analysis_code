@@ -2,6 +2,6 @@
 ### Generic MATLAB/Python code for data analysis and statistics including:
 
 * Regression (OLS, LASSO, logistic, PCA)
-* Classificaiton (Naive Bayes)
+* Classification (Naive Bayes)
 * Fleiss' k
-* Pre-processing (cleaning, long format to wide)
+* Pre-processing (cleaning, completeness checks, long format to wide)
