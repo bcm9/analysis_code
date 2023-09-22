@@ -21,13 +21,12 @@ if ratio > 1:
 else:
     print("Required sample size in each group:", round(sample_size))
 
-
 # Generate random data for demonstration
 # Assuming Group 1 has mean 0 and Group 2 has mean 0+effect_size*std_dev
 group1 = np.random.normal(0, std_dev, round(sample_size))
 group2 = np.random.normal(effect_size*std_dev, std_dev, round(sample_size))
 
-# Plot KDE distribution
+# Plot KDE distributions
 sns.kdeplot(group1, label="Group 1", shade=True)
 sns.kdeplot(group2, label="Group 2", shade=True)
 plt.title('KDE plot for two groups')
