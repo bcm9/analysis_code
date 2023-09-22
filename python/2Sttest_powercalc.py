@@ -2,7 +2,7 @@
 Audiology clinical trial sample size calculation
 
 Script computes the required sample size for a clinical trial testing the effectiveness 
-of a new hearing aid, with a two-sampel t-test.
+of a new hearing aid, with a two-sample t-test.
 Primary outcome measure = improvement in speech recognition scores (%). 
 Expected improvement over conventional hearing aids = effect_size%
 Known standard deviation = std_dev% based on prior studies.
