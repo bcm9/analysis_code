@@ -12,8 +12,8 @@ import math
 
 def compute_sample_size(effect_size, std_dev, alpha=0.05, power=0.80):
     # Z values for given alpha and power
-    Z_alpha_2 = 1.96  # for alpha = 0.05 (two-tailed)
-    Z_beta = 0.84  # for power = 0.80
+    Z_alpha_2 = 1.96  # for alpha = 0.05, type i error (two-tailed)
+    Z_beta = 0.84  # for power = 0.80, 1-type ii error
     
     # Formula for sample size for a two-sample t-test
     n = ((Z_alpha_2 + Z_beta) * std_dev / effect_size) ** 2
