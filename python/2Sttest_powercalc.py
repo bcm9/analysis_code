@@ -15,7 +15,6 @@ ratio = 1 # Sample ratio allocation ratio
 # Calculate sample size for independent samples t-test
 sample_size = sms.tt_ind_solve_power(effect_size, alpha=alpha, power=power, ratio=ratio, alternative='two-sided')
 
-
 if ratio > 1:
     print("Required sample size group 1:", round(sample_size))
     print("Required sample size group 2:", round(sample_size)*ratio)
