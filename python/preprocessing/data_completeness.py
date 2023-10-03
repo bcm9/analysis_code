@@ -21,7 +21,12 @@ clean_df = pd.read_csv(filename)
 print(f'The dataframe has {clean_df.shape[0]} rows and {clean_df.shape[1]} columns.')
 
 # Check completeness of each column
-completeness = (clean_df.notnull().sum() / len(clean_df)) * 100
+completeness = clean_df.notnull().sum()
+completeness_pc = (clean_df.notnull().sum() / len(clean_df)) * 100
+df_completeness = pd.DataFrame({
+    'Completeness': completeness,
+    'Completeness Percentage': completeness_pc
+})
 print('\nCompleteness of each column:\n')
 print(completeness)
 
@@ -49,7 +54,7 @@ name = "completeness_{}.xlsx".format(timestamp)
 writer = pd.ExcelWriter(name, engine='xlsxwriter')
 
 # Write the dfs to excel file
-completeness.to_excel(writer, sheet_name='Completeness', index=True)
+df_completeness.to_excel(writer, sheet_name='Completeness', index=True)
 summary.to_excel(writer, sheet_name='Summary', index=True)
 
 # Save the Excel file
