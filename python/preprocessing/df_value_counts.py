@@ -1,5 +1,6 @@
 """
-Script to Generate Value Counts for Each Column in a Dataset
+Script to generate value counts for each column in a CSV file.
+Input directory and filename.csv, returns text file with value count tables.
 """
 
 import pandas as pd
@@ -44,8 +45,8 @@ if __name__ == "__main__":
     # Get the folder and filename from the user
     folder = input("Enter the directory path: ")
     filename = input("Enter the filename: ")
-
     filepath = os.path.join(folder, filename)
+    
     # Exectute code block
     df = load_data(folder+filename)
     tables = generate_value_counts(df)
