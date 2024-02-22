@@ -7,15 +7,19 @@ from tabulate import tabulate
 import sys
 import os
 
+## LOAD THE CSV FILE
 def load_data(filepath):
-    """Load the dataset from a given filepath."""
+    # Load the dataset from a given filepath, returns df
     if not os.path.exists(filepath):
         print(f"Error: The specified file {filepath} does not exist.")
         sys.exit()
+    else:
+        print("Loading and writing data. Please wait")
     return pd.read_csv(filepath)
 
+## GENERATE VALUE COUNTS IN EACH COLUMN, APPEND TO A LIST OF TABLES
 def generate_value_counts(df):
-    """Generate value counts for each column in the dataframe."""
+    # Analyses df, generates value counts for each column, and returns list of tables (as strings)
     tables = []
     for column in df.columns:
         value_counts = df[column].value_counts().reset_index()
@@ -24,8 +28,9 @@ def generate_value_counts(df):
         tables.append(table)
     return tables
 
+## WRITE VALUE COUNTS TABLES TO OUTPUT TEXT FILE
 def write_to_file(folder, tables, df):
-    """Write the value counts to an output text file."""
+    # Write the value counts to an output text file to folder directory
     output_filename = "value_counts.txt"
     with open(os.path.join(folder, output_filename), 'w', encoding='utf-8') as f:
         for i, table in enumerate(tables):
@@ -34,13 +39,14 @@ def write_to_file(folder, tables, df):
             f.write("\n\n")
     print(f"Value counts written to {os.path.join(folder, output_filename)}")
 
+## CHECK IF SCRIPT IS BEING RUN DIRECTLY
 if __name__ == "__main__":
     # Get the folder and filename from the user
     folder = input("Enter the directory path: ")
     filename = input("Enter the filename: ")
 
     filepath = os.path.join(folder, filename)
-
+    # Exectute code block
     df = load_data(folder+filename)
     tables = generate_value_counts(df)
     write_to_file(folder, tables, df)
