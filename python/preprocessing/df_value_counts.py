@@ -8,7 +8,7 @@ from tabulate import tabulate
 import sys
 import os
 
-## LOAD THE CSV FILE
+## LOAD THE DATA FILE
 def load_data(filepath):
     # Load the dataset from a given filepath, returns df
     if not os.path.exists(filepath):
@@ -16,8 +16,17 @@ def load_data(filepath):
         sys.exit()
     else:
         print("Loading and writing data. Please wait")
-    return pd.read_csv(filepath)
-
+        
+    # Check file extension and load accordingly
+    _, file_extension = os.path.splitext(filepath)
+    if file_extension == '.csv':
+        return pd.read_csv(filepath)
+    elif file_extension == '.xlsx':
+        return pd.read_excel(filepath)
+    else:
+        print(f"Error: Unsupported file format {file_extension}")
+        sys.exit()
+        
 ## GENERATE VALUE COUNTS IN EACH COLUMN, APPEND TO A LIST OF TABLES
 def generate_value_counts(df):
     # Analyses df, generates value counts for each column, and returns list of tables (as strings)
